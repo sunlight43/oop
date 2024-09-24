@@ -1,13 +1,14 @@
 public class Book {
 
    private String name;
-   private Author author;
+   private Author author [] = new Author [2];
    private double price;
-   private int qty;
+   private int qty = 0;
    
-   public Book(String name, Author author, double price, int qty) {
+   public Book(String name, Author authors [], double price, int qty) {
       this.name = name;
-      this.author = author;
+      authors [0] = new Author("Alfredo D. Formacil", "formacilalfredo43@gmail.com", 'm');
+      authors [1] = new Author("Alfredo D. Formacil", "formacilalfredo434@gmail.com", 'm');
       this.price = price;
       this.qty = qty;
    }
@@ -17,7 +18,7 @@ public class Book {
    }
    
    public Author getAuthor() {
-      return author;
+      return authors[authors.length];
    }
    
    public double getPrice() {
@@ -37,6 +38,17 @@ public class Book {
    }
    
    public String toString() {
-      return "'" + name + "' by " + author;
+        return "Book [name = " + name + " authors = " + authors[0] + " email = " + authors[0].getEmail() + " price = " + price + " qty = " + qty + "]";
+    }
+    public String getAuthorNames() {
+        return authors[].getName();
+}
+
+    public String getAuthorEmails() {
+        return authors[].getEmail();
+    }
+
+    public char getAuthorGenders() {
+        return authors[].getGender();
    }
 }
